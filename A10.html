@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Project</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: "Bookman Old Style", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Solid background color */
+            color: #333;
+        }
+
+        /* Header styles */
+        header {
+            background: linear-gradient(to right, #ff4b2b, #ff416c);
+            padding: 20px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        header a:hover {
+            color: #ffcccb;
+        }
+
+        /* Section styling */
+        section {
+            display: none;
+            padding: 60px 40px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            max-width: 1000px;
+        }
+
+        /* Typography styles */
+        h1, h2, h3 {
+            margin: 20px 0;
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            line-height: 1.8;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        /* Animation for sections on scroll */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        section {
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        /* Image styling */
+        .images img {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<center><img src="https://allegiance-educare.in/storage/uploads/colleges/thumb/250_250_1416826958Capture123.jpg" width="200" alt="Geethanjali Institute of Science and Technology"></center>
+<h1>GEETHANJALI INSTITUTE OF SCIENCE AND TECHNOLOGY</h1>
+<h2><center>DEPARTMENT OF DATA SCIENCE</center></h2>
+<h3><center>A COMMUNITY SERVICE PROJECT ON FOOD HABITS</center></h3>
+
+<header>
+    <a onclick="showSection('home')">Home</a>
+    <a onclick="showSection('abstract')">Abstract</a>
+    <a onclick="showSection('existing-before-survey')">Existing Before Survey</a>
+    <a onclick="showSection('proposed-after-survey')">Proposed After Survey</a>
+    <a onclick="showSection('questionnaire')">Questionnaire</a>
+    <a onclick="showSection('survey-data')">Survey Data</a>
+    <a onclick="showSection('group-members')">Group Members</a>
+    <a onclick="showSection('conclusion')">Conclusion</a>
+</header>
+
+<!-- Home Section -->
+<section id="home">
+    <img src="C:\Users\ADMIN\Downloads\images.jpg" width="1000">
+</section>
+
+<!-- Abstract Section -->
+<section id="abstract">
+    <img src="C:\Users\ADMIN\Pictures\Screenshots\abstract.png.png" width="1000">
+</section>
+
+<!-- Existing Before Survey Section -->
+<section id="existing-before-survey">
+    <img src="C:\Users\ADMIN\Pictures\Screenshots\existing system 1.png.png" width="1000">
+</section>
+
+<!-- Proposed After Survey Section -->
+<section id="proposed-after-survey">
+    <img src="C:\Users\ADMIN\Pictures\Screenshots\proposed system.png.png" width="1000">
+</section>
+
+<!-- Survey Data Section -->
+<section id="survey-data">
+    <img src="C:\Users\ADMIN\Pictures\Screenshots\graph1.png.png" width="1000">
+</section>
+
+<!-- Questionnaire -->
+<section id="questionnaire">
+    <img src="C:\Users\ADMIN\Pictures\Screenshots\questionnaire.png.png" width="1000">
+</section>
+
+<!-- Survey Pictures Section -->
+<section id="group-members">
+    <img src="C:\Users\ADMIN\Pictures\Screenshots\groupmemberss.png.png" width="1000">
+</section>
+
+<!-- Conclusion Section -->
+<section id="conclusion">
+    <img src="C:\Users\ADMIN\Pictures\Screenshots\conclusion.png.png" width="1000">
+</section>
+
+<script>
+    // Function to show the selected section and hide others
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+            section.style.display = section.id === sectionId ? 'block' : 'none';
+        });
+    }
+
+    // Show home section by default on page load
+    showSection('home');
+</script>
+
+<script>
+    const ctx = document.getElementById('foodCompositionChart').getContext('2d');
+    const foodCompositionChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Proteins', 'Carbs', 'Fats', 'Water/Fruits'],
+            datasets: [{
+                label: 'Food Composition (%)',
+                data: [25, 50, 20, 5],
+                backgroundColor: [
+                    '#ff6f61',  // Protein
+                    '#f7b733',  // Carbs
+                    '#4ac29a',  // Fats
+                    '#38ef7d'   // Water/Fruits
+                ],
+                borderWidth: 1,
+                borderRadius: 5
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 100,
+                    ticks: {
+                        stepSize: 10
+                    }
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
